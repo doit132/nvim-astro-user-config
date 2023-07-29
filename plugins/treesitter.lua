@@ -1,9 +1,15 @@
+-- :TSInstall lua
+-- NOTE: https://github.com/AstroNvim/AstroNvim/commit/377db3f7d6273779533c988dadc07a08e0e43f2e new textobject
+-- NOTE: treesitter new textobject. k: block, c: class, ?: conditional, f: function, l: loop, a: parameter, ""< | > | A ,F ,K" swap textobject
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = function(_, opts)
-    -- add more things to the ensure_installed table protecting against community packs modifying it
-    opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
-      -- "lua"
+    return require("astronvim.utils").extend_tbl(opts, {
+      autotag = {
+        enable = true,
+        -- WARN: https://github.com/windwp/nvim-ts-autotag/issues/124 autocompletion bug
+        enable_close_on_slash = false,
+      },
     })
   end,
 }
