@@ -14,7 +14,7 @@ local opt = {
 }
 
 local g = {
-  mapleader = " ",      -- set leader key
+  mapleader = " ", -- set leader key
   maplocalleader = " ", -- set default local leader key
   transparent_background = false,
   resession_enabled = true,
