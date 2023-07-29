@@ -6,9 +6,8 @@ return {
 
   -- { import = "astrocommunity.colorscheme.catppuccin" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
-  {import = "astrocommunity.scrolling.neoscroll-nvim"},
-  {import = "astrocommunity.bars-and-lines.heirline-mode-text-statusline"},
-  {import = "astrocommunity.bars-and-lines.heirline-mode-text-statusline" },
-  {import = "astrocommunity.bars-and-lines.heirline-vscode-winbar" },
-
+  { import = "astrocommunity.scrolling.neoscroll-nvim" },
+  { import = "astrocommunity.completion.codeium-vim" },
+  { import = "astrocommunity.terminal-integration.flatten-nvim" },
+  { import = "astrocommunity.git.diffview-nvim" },
 }

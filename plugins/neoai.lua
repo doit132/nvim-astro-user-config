@@ -16,6 +16,5 @@ return {
     "NeoAIInjectContext",
     "NeoAIInjectContextCode",
   },
-  opts = {
-  }
+  opts = {},
 }

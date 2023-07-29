@@ -56,27 +56,45 @@ return {
         },
       },
       mapping = {
-        ["<CR>"] = cmp.config.disable,
+        -- ["<CR>"] = cmp.config.disable,
+        ["<S-CR>"] = cmp.config.disable,
         -- ctrl + e关闭补全窗口
         -- <C-n> and <C-p> for navigating snippets
+        ["<ESC>"] = cmp.mapping.abort(),
         ["<C-n>"] = cmp.mapping(function()
           if luasnip.jumpable(1) then luasnip.jump(1) end
         end, { "i", "s" }),
         ["<C-p>"] = cmp.mapping(function()
           if luasnip.jumpable(-1) then luasnip.jump(-1) end
         end, { "i", "s" }),
-        ["<C-k>"] = cmp.mapping(
+
+        ["<S-Tab>"] = cmp.mapping(
           function() cmp.select_prev_item { behavior = cmp.SelectBehavior.Select } end,
           { "i", "s" }
         ),
-        ["<C-j>"] = cmp.mapping(function()
+
+        ["<Tab>"] = cmp.mapping(function()
           if cmp.visible() then
             cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
           else
             cmp.complete()
           end
         end, { "i", "s" }),
-        ["<Tab>"] = cmp.mapping(function(fallback)
+
+        -- ["<C-j>"] = cmp.mapping(function()
+        --   if cmp.visible() then
+        --     cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
+        --   else
+        --     cmp.complete()
+        --   end
+        -- end, { "i", "s" }),
+
+        -- ["<C-k>"] = cmp.mapping(
+        --   function() cmp.select_prev_item { behavior = cmp.SelectBehavior.Select } end,
+        --   { "i", "s" }
+        -- ),
+
+        ["<CR>"] = cmp.mapping(function(fallback)
           -- idea输入方式
           if cmp.visible() then
             local entry = cmp.get_selected_entry()
@@ -99,7 +117,31 @@ return {
             fallback()
           end
         end, { "i", "s" }),
-        ["<S-Tab>"] = cmp.config.disable,
+
+        -- ["<Tab>"] = cmp.mapping(function(fallback)
+        --   -- idea输入方式
+        --   if cmp.visible() then
+        --     local entry = cmp.get_selected_entry()
+        --     if not entry then
+        --       cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
+        --     else
+        --       if has_words_before() then
+        --         cmp.confirm {
+        --           behavior = cmp.ConfirmBehavior.Replace,
+        --           select = false,
+        --         }
+        --       else
+        --         cmp.confirm {
+        --           behavior = cmp.ConfirmBehavior.Insert,
+        --           select = false,
+        --         }
+        --       end
+        --     end
+        --   else
+        --     fallback()
+        --   end
+        -- end, { "i", "s" }),
+        -- ["<S-Tab>"] = cmp.config.disable,
       },
     })
   end,
