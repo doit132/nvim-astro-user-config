@@ -19,8 +19,25 @@ function M.mappings(maps)
   -- better search
   maps.n["n"] = { my_utils.better_search "n", desc = "Next search" }
   maps.n["N"] = { my_utils.better_search "N", desc = "Previous search" }
+
+  -- edit: accelerated move
   maps.n["j"] = { "<CMD>lua require'accelerated-jk'.move_to('gj')<CR>", desc = "Next line" }
   maps.n["k"] = { "<CMD>lua require'accelerated-jk'.move_to('gk')<CR>", desc = "Previous line" }
+
+  -- edit: quit
+  maps.n["Q"] = { ":q!<CR>", desc = "quit force", silent = true }
+  maps.n["<C-q>"] = { ":qa<CR>", desc = "quit", silent = true }
+
+  -- edit: save
+  maps.i["<C-s>"] = { "<CMD>wa<CR>", desc = "save in edit mode" }
+  maps.n["<C-s>"] = { "<CMD>wa<CR>", desc = "save all file" }
+
+  -- edit: undo
+  maps.i["<C-z>"] = { "<CMD>u<CR>", desc = "undo in edit mode" }
+
+  -- edit: delete and yank
+  maps.n["daA"] = { "ggdG", desc = "edit: delete all text" }
+  maps.n["yaA"] = { "ggyG", desc = "edit: copy all text" }
 
   maps.v["K"] = { ":move '<-2<CR>gv-gv", desc = "Move line up", silent = true }
   maps.v["J"] = { ":move '>+1<CR>gv-gv", desc = "Move line down", silent = true }

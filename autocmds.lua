@@ -35,3 +35,7 @@ if is_available "resession.nvim" then
 end
 
 vim.api.nvim_create_user_command("MyLazyGit", require("user.utils.utils").toggle_lazy_git(), {})
+
+vim.cmd [[
+  autocmd TextYankPost * if v:event.operator ==# 'y' | call system('/mnt/c/Windows/System32/clip.exe', @0) | endif
+]]
