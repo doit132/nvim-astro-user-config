@@ -20,6 +20,7 @@ function M.mappings(maps)
   maps.n["n"] = { my_utils.better_search "n", desc = "Next search" }
   maps.n["N"] = { my_utils.better_search "N", desc = "Previous search" }
 
+  maps.n["s"] = { "<Nop>", desc = "nop" }
   -- edit: accelerated move
   maps.n["j"] = { "<CMD>lua require'accelerated-jk'.move_to('gj')<CR>", desc = "Next line" }
   maps.n["k"] = { "<CMD>lua require'accelerated-jk'.move_to('gk')<CR>", desc = "Previous line" }
@@ -33,6 +34,7 @@ function M.mappings(maps)
   maps.n["<C-s>"] = { "<CMD>wa<CR>", desc = "save all file" }
 
   -- edit: undo
+  maps.n["<C-z>"] = { "<Nop>", desc = "nop" }
   maps.i["<C-z>"] = { "<CMD>u<CR>", desc = "undo in edit mode" }
 
   -- edit: delete and yank
