@@ -23,15 +23,15 @@ return {
       },
       --- NOTE: https://github.com/AstroNvim/astrocommunity/pull/383
       sources = cmp.config.sources {
-        { name = "codeium",           priority = 1250 },
-        { name = "nvim_lsp",          priority = 1000 },
-        { name = "luasnip",           priority = 750 },
+        { name = "codeium", priority = 1250 },
+        { name = "nvim_lsp", priority = 1000 },
+        { name = "luasnip", priority = 750 },
         { name = "pandoc_references", priority = 725 },
-        { name = "latex_symbols",     priority = 700 },
-        { name = "emoji",             priority = 700 },
-        { name = "calc",              priority = 650 },
-        { name = "path",              priority = 500 },
-        { name = "buffer",            priority = 250 },
+        { name = "latex_symbols", priority = 700 },
+        { name = "emoji", priority = 700 },
+        { name = "calc", priority = 650 },
+        { name = "path", priority = 500 },
+        { name = "buffer", priority = 250 },
       },
       sorting = {
         comparators = {
